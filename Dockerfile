@@ -1,14 +1,14 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 
-# Рабочая директория внутри контейнера
+# Установим рабочую директорию
 WORKDIR /app
 
-# Скопируем список зависимостей и установим их
-COPY requirements.txt .
+# Скопируем зависимости и установим их
+COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Скопируем исходники (включая main.py)
-COPY . .
+# Скопируем всё приложение в контейнер
+COPY ./app /app
 
-# По умолчанию запускаем main.py
+# Укажем команду для запуска
 CMD ["python", "main.py"]

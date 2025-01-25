@@ -14,7 +14,9 @@ services:
 
     # Если хотите пробрасывать исходники с хост-машины (чтобы изменять код без пересборки):
     volumes:
-      - ./:/app
+      - ./app:/app
+      
+    working_dir: /app
 
     # Запускаем main.py внутри контейнера (можно пропустить, если CMD в Dockerfile уже указан)
     command: python main.py

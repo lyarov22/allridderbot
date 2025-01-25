@@ -6,7 +6,7 @@ services:
     build: .
     
     # Название контейнера (необязательно, но удобно для чтения)
-    container_name: telegram_bot
+    container_name: all_ridder
 
     # Файл с переменными окружения
     env_file:
@@ -15,7 +15,7 @@ services:
     # Если хотите пробрасывать исходники с хост-машины (чтобы изменять код без пересборки):
     volumes:
       - ./app:/app
-      
+
     working_dir: /app
 
     # Запускаем main.py внутри контейнера (можно пропустить, если CMD в Dockerfile уже указан)

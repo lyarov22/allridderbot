@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 
 # Рабочая директория внутри контейнера
-WORKDIR /app
+WORKDIR /
 
 # Скопируем список зависимостей и установим их
 COPY requirements.txt .
